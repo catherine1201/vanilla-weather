@@ -1,0 +1,77 @@
+h1 {
+  color: green;
+  font-size: 55px;
+  text-transform: capitalize;
+}
+
+h3 {
+  text-transform: capitalize;
+}
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.overview {
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.wrapper {
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.card-body {
+  opacity: 0.5;
+}
+.card-body:hover {
+  color: blue;
+  opacity: 1;
+  transform: all 200ms ease-in-out;
+}
+
+#currentLocationButton {
+  background: rgb(51, 50, 50);
+  color: rgb(236, 163, 136);
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin: 15px auto;
+}
+
+#currentLocationButton:hover {
+  color: rgb(51, 50, 50);
+  background: rgb(236, 163, 136);
+  transition: all 180ms ease-in;
+}
+
+#forecast3 {
+  text-align: center;
+  font-size: 13px;
+  line-height: 15px;
+  padding-top: 2px;
+  padding-bottom: 0;
+}
+
+#searchButton {
+  background: rgb(236, 163, 136);
+  border-radius: 5px;
+  color: rgb(51, 50, 50);
+  border: 1px solid #000000;
+}
+
+#searchButton:hover {
+  background: rgb(51, 50, 50);
+  color: rgb(236, 163, 136);
+  transition: all 180ms ease-in;
+}
+
+#searchForm {
+  text-align: center;
+}
+
+/* // https://www.shecodes.io/workshops/shecodes-plus-41-0/projects/216304 */
