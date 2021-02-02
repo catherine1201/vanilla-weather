@@ -78,9 +78,11 @@
   let h3 = document.querySelector("#weatherDescription");
   h3.innerHTML = `${ descriptionElement }`;
   
-  let temperature = Math.round(response.data.main.temp);
-  let h4 = document.querySelector(".degrees");
-  h4.innerHTML = ` ${ temperature }`;
+    let h4 = document.querySelector("#degrees");
+    celsiusTemperature = response.data.main.temp;
+    h4.innerHTML = Math.round(celsiusTemperature);
+  // let temperature = Math.round(response.data.main.temp);
+  // h4.innerHTML = ` ${ temperature }`;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${ response.data.weather[ 0 ].icon }@2x.png`);
@@ -119,29 +121,58 @@
 //   }
 // }
 
-// function displayForecast(response) {
-//   let forecastElement = document.querySelector("#forecast3");
-//   forecastElement.innerHTML = null;
-//   let forecast = null;
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast3");
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-//   for (let index = 0; index < 6; index++){
-//     forecast = response.data.list[ index ];
-//     forecastElement.innerHTML += `
-//     <div class="col-2">
-//     <h3>
-//     ${ formatTime(forecast.dt * 1000) }
-//     </h3>
-//     <img src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
-//     <div class = "weather-forecast-temperature">
-//     <strong>
-//     ${ Math.round(forecast.main.temp_max) }°
-//     </strong>
-//     ${ Math.round(forecast.main.temp_min) }°
-//     </div>
-//     </div>
-//     `;
-//   }
-// }
+  for (let index = 0; index < 6; index++){
+    forecast = response.data.list[ index ];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+    <h3>
+    ${ formatTime(forecast.dt * 1000) }
+    </h3>
+    <img src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
+    <div class = "weather-forecast-temperature">
+    <strong>
+    ${ Math.round(forecast.main.temp_max) }°
+    </strong>
+    ${ Math.round(forecast.main.temp_min) }°
+    </div>
+    </div>
+    `;
+  }
+}
+
+// to get celsius & fahrenheit
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#degrees");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) /5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#degrees");
+  // let celsiusTemperature = (fahrenheitTemperature - 32) * 5 / 9;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheitButton");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusTemperature = null;
+let celsiusLink = document.querySelector("#celsiusbutton");
+celsiusLink.addEventListener("click", convertToCelsius);
+
 
 // search city in general
 function search(event) {
