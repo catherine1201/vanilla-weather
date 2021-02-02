@@ -1,4 +1,3 @@
-// function formatTime(timestamp) {
   let dateElement = document.querySelector("#date-time");
   let currentTime = new Date();
 
@@ -44,26 +43,26 @@
   }
 
   dateElement.innerHTML = `${ date } ${ months[ currentMonth ] } ${ currentYear } ${ days[ currentDay ] } ${ hours }:${ minutes }`;
-// }
-// function formatDate(timestamp) {
-//   let date = new Date(timestamp);
-//   let days = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
-//   let day = days[ date.getDay() ];
-//   return `${ day } ${formatTime(timestamp)}`;
-// }
 
-// function formatTime(timestamp) {
-//   let date = new Date(timestamp);
-//   let hours = date.getHours();
-//   if (hours < 10) {
-//     hours = `0${ hours }`;
-    
-//   let minutes = date.getMinutes();
-//   if (minutes < 10) {
-//   minutes = `0${ minutes }`;  
-//     }
-//     return `${ hours }:${ minutes }`;
-//   }
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let days = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
+  let day = days[ date.getDay() ];
+  return `${ day } ${formatHours(timestamp)}`;
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${ hours }`;
+}
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+  minutes = `0${ minutes }`;  
+    }
+    return `${ hours }:${ minutes }`;
+  }
   
 // to get temperature, humidity & windspeed
   function showTemperature(response) {
@@ -97,41 +96,41 @@
   speed.innerHTML = ` ${ windSpeed } `;
 }
 
-// function displayForecast(response) {
-//   let forecastElement = document.querySelector("#forecast1");
-//   forecastElement.innerHTML = null;
-//   let forecast = null;
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast1");
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-//   for (let index = 0; index < 3; index++){
-//     forecast = response.data.list[ index ];
-//     forecastElement.innerHTML += `
-//     <div class="col-2">
-//     <h3>
-//     ${ formatTime(forecast.dt * 1000) }
-//     </h3>
-//     <img src ="http://openweathermap.org/img/wn/${ forecast.weather[ 0 ].icon }@2x.png/>
-//     <div class = "weather-forecast-temperature">
-//     <strong>
-//     ${ Math.round(forecast.main.temp_max) }°
-//     </strong>
-//     ${ Math.round(forecast.main.temp_min) }°
-//     </div>
-//     </div>
-//     `;
-//   }
-// }
+  for (let index = 0; index < 3; index++){
+    forecast = response.data.list[ index ];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+    <h3>
+    ${ formatHours(forecast.dt * 1000) }
+    </h3>
+    <img src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
+    <div class = "weather-forecast-temperature">
+    <strong>
+    ${ Math.round(forecast.main.temp_max) }°
+    </strong>
+    ${ Math.round(forecast.main.temp_min) }°
+    </div>
+    </div>
+    `;
+  }
+}
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast3");
   forecastElement.innerHTML = null;
   let forecast = null;
 
-  for (let index = 0; index < 6; index++){
+  for (let index = 0; index < 3; index++){
     forecast = response.data.list[ index ];
     forecastElement.innerHTML += `
     <div class="col-2">
     <h3>
-    ${ formatTime(forecast.dt * 1000) }
+    ${ formatHours(forecast.dt * 1000) }
     </h3>
     <img src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
     <div class = "weather-forecast-temperature">
@@ -188,7 +187,7 @@ function searchCity(city) {
   axios.get(apiUrl).then(showTemperature);
 
   let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
-  // axios.get(forecastUrl).then(displayForecast);
+  axios.get(forecastUrl).then(displayForecast);
 }
 
 // to get current location using coordinates
