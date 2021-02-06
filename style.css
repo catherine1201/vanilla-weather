@@ -1,3 +1,7 @@
+body {
+  background-image: linear-gradient(to bottom, black 0%, #29323c 100%);
+}
+
 h1 {
   background-image: linear-gradient(
     to right,
@@ -37,26 +41,26 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
+.card-body {
+  opacity: 0.5;
+}
+
+.card-body:hover {
+  color: blue;
+  opacity: 1;
+  transform: all 200ms ease-in-out;
+}
+
 .container {
   max-width: 600px;
   margin: 30px auto;
 }
 
-.speed {
-  background-image: linear-gradient(
-    to top,
-    lightgrey 0%,
-    lightgrey 1%,
-    #e0e0e0 26%,
-    #efefef 48%,
-    #d9d9d9 75%,
-    #bcbcbc 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bolder;
-  font-size: 26px;
-  padding-top: 24px;
+.overview {
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 600px;
+  text-align: center;
 }
 
 .humid {
@@ -76,26 +80,57 @@ h3 {
   padding-top: 24px;
 }
 
-.overview {
-  padding: 15px;
-  margin: 15px auto;
-  max-width: 600px;
-  text-align: center;
+.humidityDescription {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+}
+
+.speed {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  font-size: 26px;
+  padding-top: 24px;
+}
+
+.wind {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
 }
 
 .wrapper {
   border: 1px solid #fbed96;
   border-radius: 10px;
   padding: 20px;
-}
-
-.card-body {
-  opacity: 0.5;
-}
-.card-body:hover {
-  color: blue;
-  opacity: 1;
-  transform: all 200ms ease-in-out;
 }
 
 #cityInput {
@@ -123,43 +158,8 @@ h3 {
   transition: all 180ms ease-in;
 }
 
-#forecast3 {
-  text-align: center;
-  font-size: 14px;
-  line-height: 10px;
-
-  padding-top: -100px;
-  padding-bottom: 0;
-  margin-top: -50px;
-}
-
-#forecast3 h3 {
-  color: green;
-}
-
-#searchButton {
-  background: white;
-  color: black;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bolder;
-  margin: 5px auto;
-  padding: 10px;
-}
-
 #date-time {
-  font-size: 30px;
-}
-
-#searchButton:hover {
-  color: white;
-  background: black;
-  transition: all 180ms ease-in;
-}
-
-#searchForm {
-  text-align: center;
+  font-size: 25px;
 }
 
 #degrees {
@@ -192,35 +192,37 @@ h3 {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.wind {
-  background-image: linear-gradient(
-    to top,
-    lightgrey 0%,
-    lightgrey 1%,
-    #e0e0e0 26%,
-    #efefef 48%,
-    #d9d9d9 75%,
-    #bcbcbc 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 25px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 10px;
+  padding-top: -100px;
+  padding-bottom: 0;
+  margin-top: -50px;
 }
 
-.humidityDescription {
-  background-image: linear-gradient(
-    to top,
-    lightgrey 0%,
-    lightgrey 1%,
-    #e0e0e0 26%,
-    #efefef 48%,
-    #d9d9d9 75%,
-    #bcbcbc 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 25px;
+#forecast3 h3 {
+  color: green;
+}
+
+#searchButton {
+  background: white;
+  color: black;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 5px auto;
+  padding: 10px;
+}
+
+#searchButton:hover {
+  color: white;
+  background: black;
+  transition: all 180ms ease-in;
+}
+
+#searchForm {
+  text-align: center;
 }
 
 .temp {
@@ -240,8 +242,4 @@ h3 {
 
 #weatherDescription {
   font-size: 28px;
-}
-
-body {
-  background-image: linear-gradient(to bottom, black 0%, #29323c 100%);
 }
