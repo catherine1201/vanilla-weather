@@ -1,16 +1,79 @@
 h1 {
-  color: green;
-  font-size: 55px;
+  background-image: linear-gradient(
+    to right,
+    #fdcbf1 0%,
+    #fdcbf1 1%,
+    #e6dee9 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
   text-transform: capitalize;
+  margin-top: -20px;
+}
+
+h2 {
+  background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+    radial-gradient(
+      91% 146%,
+      rgba(255, 255, 255, 0.5) 47%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  background-blend-mode: screen;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h3 {
   text-transform: capitalize;
+  background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+    radial-gradient(
+      91% 146%,
+      rgba(255, 255, 255, 0.5) 47%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  background-blend-mode: screen;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container {
   max-width: 600px;
   margin: 30px auto;
+}
+
+.speed {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  font-size: 26px;
+  padding-top: 24px;
+}
+
+.humid {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  font-size: 26px;
+  padding-top: 24px;
 }
 
 .overview {
@@ -21,7 +84,7 @@ h3 {
 }
 
 .wrapper {
-  border: 1px solid red;
+  border: 1px solid #fbed96;
   border-radius: 10px;
   padding: 20px;
 }
@@ -35,38 +98,63 @@ h3 {
   transform: all 200ms ease-in-out;
 }
 
-#currentLocationButton {
-  background: rgb(51, 50, 50);
-  color: rgb(236, 163, 136);
-  border: 1px solid #000000;
-  border-radius: 5px;
-  margin: 15px auto;
+#cityInput {
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 25px;
+  margin: 5px auto;
+  padding: 10px;
 }
 
-#currentLocationButton:hover {
-  color: rgb(51, 50, 50);
-  background: rgb(236, 163, 136);
+#currentLocation {
+  background: white;
+  color: black;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 5px auto;
+  padding: 10px;
+}
+
+#currentLocation:hover {
+  color: white;
+  background: black;
   transition: all 180ms ease-in;
 }
 
 #forecast3 {
   text-align: center;
-  font-size: 13px;
-  line-height: 15px;
-  padding-top: 2px;
+  font-size: 14px;
+  line-height: 10px;
+
+  padding-top: -100px;
   padding-bottom: 0;
+  margin-top: -50px;
+}
+
+#forecast3 h3 {
+  color: green;
 }
 
 #searchButton {
-  background: rgb(236, 163, 136);
-  border-radius: 5px;
-  color: rgb(51, 50, 50);
+  background: white;
+  color: black;
   border: 1px solid #000000;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 5px auto;
+  padding: 10px;
+}
+
+#date-time {
+  font-size: 30px;
 }
 
 #searchButton:hover {
-  background: rgb(51, 50, 50);
-  color: rgb(236, 163, 136);
+  color: white;
+  background: black;
   transition: all 180ms ease-in;
 }
 
@@ -74,4 +162,86 @@ h3 {
   text-align: center;
 }
 
-/* // https://www.shecodes.io/workshops/shecodes-plus-41-0/projects/216304 */
+#degrees {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+  font-weight: bolder;
+  float: inline-start;
+  padding-top: 35px;
+}
+
+#forecast3 {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.wind {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+}
+
+.humidityDescription {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+}
+
+.temp {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+}
+
+#weatherDescription {
+  font-size: 28px;
+}
+
+body {
+  background-image: linear-gradient(to bottom, black 0%, #29323c 100%);
+}
