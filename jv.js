@@ -192,14 +192,15 @@ function searchCity(city) {
 
 // to get current location using coordinates
 function showPosition(position) {
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
-    let units = "metric";
-    let apiKey = "ac4eabaa4e24a5a1b4be0fdf6adfaae8";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lon=${longitude}&lat=${latitude}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(showTemperature);
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "ac4eabaa4e24a5a1b4be0fdf6adfaae8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lon=${ longitude }&lat=${ latitude }&appid=${ apiKey }&units=${ units }`;
+  axios.get(apiUrl).then(showTemperature);
+  let geolocation = `https://api.openweathermap.org/data/2.5/forecast?lon=${ longitude }&lat=${ latitude }&appid=${ apiKey }&units=${ units }`;
+  axios.get(geolocation).then(displayForecast);
 }
-
 
 function getCurrentLocation() {
   navigator.geolocation.getCurrentPosition(showPosition);
